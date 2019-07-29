@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>Css Layout</title>
+    <style>
+        div{
+            color: white;
+            background: black;
+            border:3px solid red;
+            border-radius: 15px;
+            padding: 15px;
+            margin: 15px;
+        }
+
+        p{
+            color: black;
+            background: white;
+            border:3px solid red;
+            border-radius: 15px;
+            padding: 15px 2px;
+            /* padding-top: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            padding-left: 15px; */
+            margin: 15px;        }
+
+
+            #header, #footer{
+                text-align: center;
+                /* width: 50%; */
+            }
+
+            #section{
+                width: 45%;
+                float: left;
+            }
+            #sidebar{
+                width: 45%;
+                float: right;
+            }
+            body, div{
+                box-sizing: border-box;
+            }
+
+            #footer{
+                clear: both;
+            }
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- <div>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores soluta quasi rerum, fugit qui ut natus neque libero reprehenderit vero quas. Error quis quia debitis omnis sit dolorem autem impedit!</p>
+    </div> -->
+
+    <div id="header">Header</div>
+    <div id="section">Main Section
+
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias placeat non impedit corporis neque autem consequatur illo nemo, repudiandae accusamus aspernatur laboriosam minus natus rem at quam architecto! Consequuntur, mollitia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum voluptatum repudiandae excepturi vero saepe fugit a adipisci, error fuga quidem facere repellendus id tempore explicabo officia officiis, eos necessitatibus laudantium.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dolore laborum similique! Facilis id unde et recusandae similique sint, vero assumenda tenetur molestias fugit ipsum iusto soluta accusamus ducimus corrupti?</p>
+    </div>
+    <div id="sidebar">Side Bar</div>
+    <div id="footer">Footer</div>
+
+</body>
+</html>
