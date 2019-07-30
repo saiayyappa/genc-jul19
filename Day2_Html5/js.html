@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript</title>
+
+    
+</head>
+<body>
+    Name: <input type="text" onkeyup="func()" />
+    <br/>
+    <h1>Your name is <span id="name"></span></h1>
+
+    <script>
+            console.log("I am javascript print method")
+            // console.log(document.getElementsByTagName('h1')[0].innerText);
+            document.write("Hello Firends");
+
+            function func(){
+                var myinbox = document.getElementsByTagName('input')[0];
+                console.log(myinbox.value);
+                document.getElementById('name').innerText = myinbox.value;
+                // document.write("Hello Document");
+
+            }
+        </script>
+</body>
+</html>
