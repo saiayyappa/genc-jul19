@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax</title>
+    <script src="./assets/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("div#div2").hide();
+
+            $("#getData").click(function () {
+                $.ajax("http://localhost:8080/empData.json", {
+                    type: 'GET',
+                    // data: {
+                    //     "first_name": "Nappie",
+                    //     "last_name": "Strete",
+                    //     "email": "nstrete2@odnoklassniki.ru",
+                    //     "gender": "Male"
+                    // },
+                    success: function (emps, status, xhr) {
+
+                        $("div#div2").show();
+                        $("div#div1").hide();
+                        
+                        console.log('success');
+                        console.log(emps);
+                        for (index in emps) {
+                            var tr = `
+                        <tr>
+                            <td>${emps[index].id}</td>
+                            <td>${emps[index].first_name} ${emps[index].last_name}</td>
+                            <td>${emps[index].email}</td>
+                            <td>${emps[index].gender}</td>
+                        </tr>`;
+                            $("#tbody").append(tr);
+                        }
+                    },
+                    error: function (xhr, status, errMsg) {
+                        console.log(xhr);
+                        console.log(status);
+                        console.log(errMsg);
+
+                    }
+                })
+            })
+        })
+    </script>
+
+    <style>
+        table#table {
+            border: 2px solid black;
+            width: 100%;
+        }
+
+        table#table th,
+        table#table td {
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Employee List</h1>
+
+    <div id="div1">
+        Please Click on button to load data
+        <button id="getData">Load</button>
+    </div>
+    <div id="div2">
+        <table id="table">
+            <thead>
+                <tr>
+                    <th>Emp Id</th>
+                    <th>Emp Name</th>
+                    <th>Emp Email</th>
+                    <th>Emp Gender</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
